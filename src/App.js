@@ -5,12 +5,17 @@ import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 
 
-export default function App() {
+function App() {
   return (
     <main>
       <Header />
        <Route exact path="/" component={WelcomePage}/>
-      <CharacterList />
+        <Route exact path="/character-list" render={(props) => 
+          <CharacterList 
+          {...props}
+          />} />
     </main>
   );
 }
+
+export default App;
