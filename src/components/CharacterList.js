@@ -32,8 +32,15 @@ import styled from 'styled-components';
 
 const CharContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #A9D3E9;
+  padding: 40px;
+`;
+
+const StyledH2 = styled.h2`
+  text-align: center;
+  text-decoration: none;
+  color: #000;
 `;
 
 function CharacterDetails(props) {
@@ -42,7 +49,7 @@ function CharacterDetails(props) {
       <CharContainer>
         <div className="character">
           <img src={props.character.image} alt="character pic"/>
-          <h2>{props.character.name}</h2>
+          <StyledH2>{props.character.name}</StyledH2>
         </div>
       </CharContainer>
     </Link>
