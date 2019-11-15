@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
  function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
@@ -30,13 +31,15 @@ import axios from "axios";
 
 function CharacterDetails({ character }) {
   return (
-      <div className="movie-card">
+    <Link to={`/character-list/${character.id}`}>
+      <div className="character-card">
         <img src={character.image} alt="character pic"/>
         <h2>{character.name}</h2>
         <p>Species: {character.species}</p>
         <p>Status: {character.status}</p>
         <p>Location: {character.location}</p>
       </div>
+    </Link>
   );
 }
 

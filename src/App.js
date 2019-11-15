@@ -6,14 +6,12 @@ import CharacterList from "./components/CharacterList";
 
 
 function App() {
+ 
   return (
     <main>
       <Header />
        <Route exact path="/" component={WelcomePage}/>
-        <Route exact path="/character-list" render={(props) => 
-          <CharacterList 
-          {...props}
-          />} />
+        <Route path="/character-list" component={CharacterList} />
     </main>
   );
 }
