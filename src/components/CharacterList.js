@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import styled from 'styled-components';
 
- function CharacterList(props) {
+ function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
-    const id = props.match.params.id
+    //const id = props.match.params.id
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
     axios
-      .get(`https://rickandmortyapi.com/api/character/${id}`)
+      .get('https://rickandmortyapi.com/api/character/')
       .then((response) => {
         setCharacters(response.data.results);
         console.log(response.data.results);
@@ -18,7 +19,7 @@ import { Link } from "react-router-dom";
       .catch((error) => {
         console.log('Data returned an error', error)
       })
-  }, [props.match.params.id]);
+  },[]);
 
   return (
     <section className="character-list">
@@ -29,16 +30,21 @@ import { Link } from "react-router-dom";
   );
 }
 
-function CharacterDetails({ character }) {
+const CharContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+`;
+
+function CharacterDetails(props) {
   return (
-    <Link to={`/character-list/${character.id}`}>
-      <div className="character-card">
-        <img src={character.image} alt="character pic"/>
-        <h2>{character.name}</h2>
-        <p>Species: {character.species}</p>
-        <p>Status: {character.status}</p>
-        <p>Location: {character.location}</p>
-      </div>
+    <Link to={`/character-list/${props.id}`}>
+      <CharContainer>
+        <div className="character">
+          <img src={props.character.image} alt="character pic"/>
+          <h2>{props.character.name}</h2>
+        </div>
+      </CharContainer>
     </Link>
   );
 }
