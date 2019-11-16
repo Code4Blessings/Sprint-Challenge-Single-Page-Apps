@@ -15,13 +15,12 @@ const Nav = styled.nav`
    margin-bottom: 32 px;
 `
 
-const NavLinks = styled.div`
-  display: flex;
-  justify-content: space-between;
-  display: flex;
-  justify-content: space-between;
+const Anchor = styled.a`
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  margin-right: 8px;
 `;
-
 
 function App() {
  
@@ -29,15 +28,15 @@ function App() {
     <div className="App">
       <Nav>
        <Header />
-        <NavLinks>
+       <SearchForm />
+        <div className='nav-links'>
           <Link to="/">Home</Link>
-          <Link to="/character-list">Fan Page</Link>
-        </NavLinks>
+          <Link to="/character-list">FanPage</Link>
+        </div>
       </Nav>
       <div>
         <Header />
         <Route exact path="/" component={WelcomePage}/>
-        <Route path="/character-list" component={SearchForm} />
         <Route path="/character-list" component={CharacterList} />
     </div>
     </div>

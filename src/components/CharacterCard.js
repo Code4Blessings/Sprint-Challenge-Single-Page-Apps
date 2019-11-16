@@ -7,6 +7,7 @@ const CharContainer = styled.div `
   justify-content: center;
   background-color: #A9D3E9;
   padding: 40px;
+  margin-top: 36px;
 `;
 
 const StyledH2 = styled.h2 `

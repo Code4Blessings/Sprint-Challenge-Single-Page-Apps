@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Cartoon = styled.img`
-  height: 700px;
-  width: 1000px;
+  height: 300px;
+  width: 300px;
   margin-left: 300px;
   margin-top: 40px;
 `;
