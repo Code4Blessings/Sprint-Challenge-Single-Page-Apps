@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import "../index.css";
 
 const Cartoon = styled.img`
   height: 700px;

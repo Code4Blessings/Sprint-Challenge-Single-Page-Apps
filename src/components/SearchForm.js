@@ -25,7 +25,7 @@ const Input = styled.input`
           <Input 
           type='search' 
           placeholder='search rick and morty'
-          />
+          onChange={(e) => props.search(e.target.value)} />
         </form>
         </section>
     );

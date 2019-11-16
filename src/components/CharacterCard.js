@@ -31,13 +31,13 @@ const Pstyle = styled.p`
 
  function CharacterCard(props) {
   return (
-    <Link to={`/character-list/${props.id}`}>
+    <Link to={`/character-list/${props.char.id}`}>
       <CharContainer>
-          <ImgStyle src={props.character.image} alt="character pic"/>
-          <div className="character-info">
-              <StyledH2>{props.character.name}</StyledH2>
-              <Pstyle>{props.character.species}</Pstyle>
-              <Pstyle>{props.character.gender}</Pstyle>
+          <ImgStyle src={props.char.image} alt="character pic" />
+          <div className = "character-info">
+              <StyledH2>{props.char.name}</StyledH2>
+              <Pstyle>{props.char.species}</Pstyle>
+              <Pstyle>{props.char.gender}</Pstyle>
           </div>
       </CharContainer>
     </Link>
